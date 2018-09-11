@@ -10,13 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "commitizen": "^2.10.1",
-    "cz-conventional-changelog": "^2.1.0",
-    "lerna": "^3.3.0"
+    "last-release-git": "0.0.3",
+    "lerna": "^3.3.0",
+    "semantic-release": "^15.9.14"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
-    }
+  "release": {
+    "verifyConditions": {
+      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
+    },
+    "getLastRelease": "last-release-git"
   }
 }
