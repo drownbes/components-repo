@@ -10,14 +10,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@semantic-release/exec": "^3.1.2",
     "last-release-git": "0.0.3",
     "lerna": "^3.3.0",
     "semantic-release": "^15.9.14"
   },
   "release": {
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
-    },
+    "verifyConditions": [{
+      "path": "@semantic-release/exec",
+      "cmd": "ls -la"
+    }],
+    "prepare": [],
+    "publish": [],
+    "success": [],
+    "fail": [],
     "getLastRelease": "last-release-git"
   }
 }
