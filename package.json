@@ -1,6 +1,6 @@
 {
   "name": "components-repo",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,16 +11,22 @@
   "license": "ISC",
   "devDependencies": {
     "@semantic-release/exec": "^3.1.2",
+    "@semantic-release/git": "^7.0.3",
     "last-release-git": "0.0.3",
     "lerna": "^3.3.0",
     "semantic-release": "^15.9.14"
   },
   "release": {
-    "verifyConditions": [{
-      "path": "@semantic-release/exec",
-      "cmd": "ls -la"
-    }],
-    "prepare": [],
+    "verifyConditions": [
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "ls -la"
+      }
+    ],
+    "prepare": [
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
     "publish": [],
     "success": [],
     "fail": [],
